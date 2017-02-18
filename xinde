@@ -1,0 +1,61 @@
+在webpack中的使用
+
+1.安装 npm webpack
+2.新建一个webpack.config.js的文件，在这个里面来配置
+3.//打包的入口文件  String|Object
+      entry: path.resolve(__dirname, 'src/index.js'),
+      output: { //配置打包结果     Object
+          //定义输出文件路径
+          path: path.resolve(__dirname, 'build'),
+          //指定打包文件名称
+          filename: 'bundle.js'
+      },
+4.在loaders中配置要干的活
+     4-1：
+      首先安装npm install --save-dev babel-core babel-preset-es2015
+          npm install --save-dev babel-loader
+          上面是将es6代码转为 es5的
+      在loaders中配置
+                  {
+                      test: /\.js$/,
+                      exclude: /node_modules/,
+                      loader: 'babel-loader'
+                  },
+      并且新建一个.babelrc的文件  添加如下
+      { "presets": [ "es2015" ] }
+     4-2：
+     将css代码合并打包到js中
+      安装npm install --save-dev style-loader css-loader
+     在loaders中配置
+                  {
+                      test: /\.css$/,
+                      loader: 'style-loader!css-loader'//添加对样式表的处理
+                  }
+     在入口文件中通过 import "./css/index.css"; 把css 文件引入
+
+5.自动生成html文件
+     npm install --save-dev html-webpack-plugin
+
+     在配置文件中引用
+       var HtmlWebpackPlugin = require('html-webpack-plugin');
+     在插件中配置
+       plugins: [
+               new HtmlWebpackPlugin({
+                   template: __dirname + "/index.html"//new 一个这个插件的实例，并传入相关的参数
+               })
+       ],
+
+6.生产环境
+  可以重新写一个配置文件 和webpack.config.js差不多的。通过webpack --config webpack.procude.config.js来重新生成
+
+  1.压缩代码
+    在plugins中加入
+     new webpack.optimize.UglifyJsPlugin({
+                 compress: {
+                     warnings: false
+                 }
+     })
+  2.清除缓存
+     通过加入哈希值来清除缓存
+    在output中
+      filename: "[name]-[hash].js"
