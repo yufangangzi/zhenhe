@@ -1,7 +1,13 @@
 var comp = require('./common.js');
-import "./css/index.css";
+import {jquery} from './jquery.js'
 
-import sum from './sum.js'
+import "./css/index.css";
+import "./css/post.css";
+
+import {s} from './sum.js';
+
+
+
 console.log(comp.name);
-var ary=[2,3,4,5,8,90,89];
-console.log(sum(ary));
+var ary=[1,2,3,4,4,3,2,1];
+console.log(s);
