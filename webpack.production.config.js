@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 //var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     //打包的入口文件  String|Object
@@ -11,7 +13,9 @@ module.exports = {
         //指定打包文件名称
         //filename: 'bundle.js'
         //带入哈希值清除缓存
-        filename: "[name]-[hash].js"
+        filename: "[name]-[hash].js",
+        //publicPath: "",// 设置require.ensure路径
+        //chunkFilename: 'xuexi/build/js/apps/[name].min.js' // 设置require.ensure 文件名
     },
     module: {
         loaders: [

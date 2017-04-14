@@ -59,3 +59,35 @@
      通过加入哈希值来清除缓存
     在output中
       filename: "[name]-[hash].js"
+  3.将css文件单独打包
+    # for webpack 1
+    npm install --save-dev extract-text-webpack-plugin
+    # for webpack 2
+    npm install --save-dev extract-text-webpack-plugin@beta
+
+    在loaders中配置
+                {
+                    test: /\.css$/,
+                    exclude: /node_modules/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: "css-loader"
+                    })//loader: 'style-loader!css-loader'//添加对样式表的处理
+                }
+    在plugins中加入如下
+    new ExtractTextPlugin("styles.css"),//里面的参数是打包的css 文件名
+
+  将其他文件单独打包到其他路径下
+    entry: {
+            './common/main': path.resolve(__dirname,'src/index.js'),
+            './jquery/jq': ['jquery']
+        },
+        output: {
+            path: path.resolve(__dirname,'dist'),
+            filename: '[name].js'
+        },
+    new webpack.ProvidePlugin({
+                $:"jquery",
+                jQuery:"jquery",
+                "window.jQuery":"jquery"
+            }),
