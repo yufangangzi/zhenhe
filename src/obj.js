@@ -87,8 +87,46 @@ var handler = {
         console.log("Handling " + type  + " for " + this.id);
     }
 };
+handler.init()
+
+//ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+//Set数据结构有以下方法。
+
+//add(value)：添加某个值，返回Set结构本身。
+//delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+//has(value)：返回一个布尔值，表示该值是否为Set的成员。
+//clear()：清除所有成员，没有返回值。
+//可以做数组的去重
+var s = new Set();
+
+[2,3,5,4,5,2,2].map(x => s.add(x));
+var ds = Array.from(s);
+console.log(ds);
+
+//ES6引入了Class（类）这个概念，作为对象的模板。通过class关键字，可以定义类。
+//Class之间可以通过extends关键字，实现继承。
+//定义类
+//定义类
+class Pointw {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    toString() {
+        return '('+this.x+', '+this.y+')';
+    }
+
+}
+
+class ColorPoint extends Pointw {
+
+    constructor(x, y, color) {
+        super(x, y); // 等同于super.constructor(x, y)
+        this.color = color;
+    }
 
 
 
-
-
+}
+var col=new ColorPoint(2,3,'red');
+console.log(col.toString())
