@@ -1,3 +1,4 @@
+//http://idea.qinxi1992.cn/
 //https://msdn.microsoft.com/zh-cn/library/dn858243(v=vs.94).aspx
 //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage

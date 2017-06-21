@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        #canvas2{
+            position: absolute;
+            left:0
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<script src="anm.js"></script>
+<script>
+
+    var ALPspeed=0.01;
+    var speed=1;
+    var frames;
+    var index=0;
+    var config1;
+    var config2;
+    var timer;
+    var myCanvas = document.getElementById('canvas');
+    var context = myCanvas.getContext('2d');
+
+    var imgs=['img/shou11.png','img/shou12.png','img/shou71.png','img/shou72.png','img/shou73.png']
+    var imagesarray=[];
+    var imagelength=0;
+    imgs.forEach(function(value,index){
+        var img=new Image();
+        img.src=value;
+        img.onload=function(){
+            var buffers = document.createElement('canvas');
+            buffers.width = 300;
+            buffers.height = 200;
+            var bufferContext = buffers.getContext('2d');
+            bufferContext.save();
+            bufferContext.drawImage(img,0,0,400,300);
+            bufferContext.restore();
+            var canvasbuffer = buffers;
+
+            imagesarray.push(canvasbuffer)
+            if(imagesarray.length==imgs.length){
+                setData()
+            }
+        }
+    });
+    function setData(){
+        window.clearTimeout(timer);
+        var d=Math.floor(Math.random()*4);
+
+        config1={
+            img:imagesarray[index],
+            direction:d
+        };
+        index++;
+        if(index>=imagesarray.length){
+            index=0
+        }
+        config2={
+            img:imagesarray[index],
+            direction:d
+        };
+        drawImage(config1,config2)
+    }
+    function drawImage(config1,config2){
+        var num=1;
+        var sx=0;
+        var sy=0;
+        function run(){
+            context.clearRect(-300,-300,900,600);
+            context.save();
+            context.globalAlpha = 1;
+            context.drawImage(config2.img,0,0,300,200);
+            context.restore();
+            num-=ALPspeed;
+
+            switch (config1.direction){
+                case 0:
+                    sx+=5;
+                    break;
+                case 1:
+                    sx-=5;
+                    break;
+                case 2:
+                    sy+=5;
+                    break;
+                case 3:
+                    sy-=5;
+                    break
+            }
+
+            if(num<0){
+                timer=setTimeout(function () {
+                    setData()
+                },300)
+                return
+            }
+            context.save();
+            context.globalAlpha = num;
+            context.drawImage(config1.img,sx,sy,300,200);
+            context.restore();
+            frames = requestAnimationFrame(run);
+
+        }
+        run()
+
+    }
+
+</script>
+</body>
+</html>

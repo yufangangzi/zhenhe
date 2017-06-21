@@ -1,0 +1,1 @@
+//https://github.com/vhtml/webpack-MultiPage-static
