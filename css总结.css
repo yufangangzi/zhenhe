@@ -1,5 +1,16 @@
 
 
+.fu_div{
+    display: table;
+}
+.fu_1span{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+
 /*居中*/
 .center{
     text-align: center;
@@ -17,6 +28,16 @@
     -webkit-box-pack: center;
     -webkit-box-align: center;
     display: -webkit-box;
+    /*水平居中*/
+}
+img{
+    /*图片水平居中*/
+    object-fit: contain;
+    /*object-fit: fill;
+    object-fit: cover;
+    object-fit: none;*/
+    /*什么是内容拉伸(fill)，什么是内容全部都显示(contain)，什么是容器没有留白(cover)，什么是该多大就多大(none)。*/
+    /*scale-down由于具有动态特性，所以要专门展示下。实际的替换内容表现是none和contain最终尺寸小的那个属性值的表现。*/
 }
 /*对齐*/
 .fu{

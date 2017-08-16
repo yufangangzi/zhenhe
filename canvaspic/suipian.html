@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clip[style] {
+            opacity: 0;
+        }
+        .active .clip:not([style]) {
+            opacity: 0;
+            animation: fadeIn .1s .4s both;
+        }
+        .active .clip[style] {
+            will-change: transform;
+            animation: noTransform .5s both;
+        }
+
+        @keyframes noTransform {
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) rotate(0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .box { height: 190px; }
+        .text { position: absolute; width: 300px; }
+        .image { position: absolute; }
+        .book-title {
+            position:relative;
+        }
+        .book-title > .area {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+        }
+    </style>
+</head>
+<body>
+<img src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" alt="美女" usemap="#MM" width="256" height="191">
+<map id="MM" name="MM">
+    <area shape="rect" coords="20,20,80,80" href="https://www.baidu.com/" alt="矩形">
+    <area shape="circle" coords="200,50,50" href="https://www.baidu.com/" alt="圆形">
+    <area shape="poly" coords="150,100,200,120,180,130,190,180,150,150,100,160,140,120,100,110" href="https://www.baidu.com/" alt="多边形">
+</map>
+
+<strong>1. 普通带文本的元素</strong>
+<div class="box active">
+    <p id="text" class="text clip">魔兽要上映了我多写点文字很忙带回带回待会带回待会</p>
+</div>
+
+<strong>2. 替换元素如图片</strong>
+<div class="box active">
+    <img id="image" class="image clip" src="http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg">
+</div>
+<script src="anm.js"></script>
+<script>
+    var eleText = document.getElementById('text'),
+            eleImage = document.getElementById('image');
+
+    // 碎片特效初始化
+    clipPath(eleText);
+    clipPath(eleImage);
+    //clip-path
+
+</script>
+</body>
+</html>
