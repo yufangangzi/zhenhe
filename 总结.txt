@@ -1,0 +1,167 @@
+申明变量
+ 1 var    声明一个变量，可选择将其初始化为一个值。
+ 2 let    声明一个块作用域的局部变量(block scope local variable)，可选择将其初始化为一个值
+ 3 const  声明一个只读的常量
+
+数据类型
+ 六种 原型 数据类型:
+Boolean.  布尔值，true 和 false.
+null. 一个表明 null 值的特殊关键字。 JavaScript 是大小写敏感的，因此 null 与 Null、NULL或其他变量完全不同。
+undefined.  变量未定义时的属性。
+Number.  表示数字，例如： 42 或者 3.14159。
+String.  表示字符串，例如："Howdy"
+Symbol ( 在 ECMAScript 6 中新添加的类型).。一种数据类型，它的实例是唯一且不可改变的。
+以及 Object 对象
+
+
+有一些方法可以将内存中表示一个数字的字符串转换为对应的数字
+
+parseInt()和parseFloat()
+
+
+数组 
+  1 concat  连接数组 返回的新数组是 连接以后的数组
+  2 every   var age1 = [12,14,15,16,18,20];
+age1.every(function (val,index,arr) {     //数组元素，数组元素索引，所属数组
+    console.log(val > 10);   // true
+    console.log(val < 15);   // true
+    console.log(val > 20);   // false
+})
+  3 filter
+     var arr4 = [10,20,30,40,50];
+var arr5 = arr4.filter(function (val,index,arr) {
+    return val > 30;
+})
+console.log(arr5);   // [40,50]
+  4 indexof 
+  5 join 数组转换为字符串  var arr7 = ['zhangsan','lisi','wangwu','wanger'];
+var str = arr7.join(' and ');
+console.log(str);    // zhangsan and lisi and wangwu and wanger
+  6 map 
+  7 pop()方法
+ *   无参数
+ *   删除并返回数组的最后一个元素(将改变原数组)
+ *   返回：返回数组的最后一个元素
+ * */
+var arr11 = [1,2,3,4,5];
+var lastItem = arr11.pop();
+console.log(lastItem);  // 5
+  8 push(agr1,agr2,agrN)方法
+ *   可接受多个参数：(必须)agrS表示要添加到数组的元素
+ *   像数组末尾添加一个或者多个对象，并返回新的数组长度
+ *   将改变原数组的长度
+ *   返回：数组长度
+ * */
+var arr12 = [1,2,3,4,5];
+var ss = arr12.push(6,7,8,9,10);
+console.log(ss);   // 10
+console.log(arr12)  // [1,2,3,4,5,6,7,8,9,10]
+  9  reverse()方法
+ *   无参数
+ *   颠倒数组元素顺序
+ *   返回：颠倒后的数组对象
+ * */
+var arr13 = [1,2,3,4,5];
+var arr14 = arr13.reverse();
+console.log(arr14);    // [5,4,3,2,1]
+  10 shift()方法
+ *   无参数
+ *   删除数组的第一个元素，并返回该元素
+ *   返回：被删除的数组元素,将更改原数组的长度
+ * */
+var arr15 = [1,2,3,4,5];
+var itme = arr15.shift();
+console.log(itme);  // 1
+console.log(arr15);  // [2,3,4,5]
+
+  11 slice(start,end)方法
+ *   2个参数：
+ *   (必须)start表示从什么地方开始选取，如果为负数，则从数组的末尾位置开始算起，
+ *   (可选)end表示从什么地方结束，如果省略该参数，那么切分的数组从start到数组末尾的位置，如果为负数，那么是从数组末尾开始算起
+ *   选取数组的的一部分，并返回一个新数组。
+ *   返回：选取的新数组
+ * */
+var arr16 = [11,22,33,44,55];
+var arr17 = arr16.slice(3,5);    //从第3位开始但不包括3到第5位结束包括第5位   所以 arr17=[44,55]
+var arr18 = arr16.slice(-4,-2);   //从-4开始包括-4位到-2位结束但不包括-2位   所以 arr18=[22,33]
+console.log(arr17);   // [44,55]
+console.log(arr18);   // [22,33]
+
+  12  sort(fn())方法
+ *   可用1个参数：(可选)fn()是处理函数
+ *   用于对数组的元素进行排序，默认按照升序排序
+ *   返回：排序过后的数组
+ * */
+var arr20 = ['m','s','a','w','b','x','c'];
+var arr22 = [22,32,12,4,56,84,1,43,2];
+var arr23 = arr20.sort();
+var arr24 = arr22.sort(function (a,b) {
+    return a-b;
+})
+console.log(arr23);  //  ["a", "b", "c", "m", "s", "w", "x"]
+console.log(arr24);  //  [1, 2, 4, 12, 22, 32, 43, 56, 84] 
+ 
+  13 splice(index,howmany,item1,item2,itemN...)方法
+ *   前2个参数为必须，index规定从什么地方开始添加/删除元素，该参数是数组元素的下标为数字，
+ *   howmany表示要删除多少元素，必须是数字，如果没有规定这个参数，则从index开始删除至数组末尾
+ *   itemS表示要添加到数组的新元素
+ *   返回：如果从数组中删除了元素，则返回被删除元素的数组
+ * */
+var arr25 = [10,11,12,13,16,17,18,19,20,'test1','test2'];
+arr25.splice(4,0,14,15);
+var arr26 = arr25.splice(11,2,21,22);
+console.log(arr26);   // ['test1','test2']
+console.log(arr25);   // [10,11,12,13,14,15,16,17,18,19,20,21,22]
+
+  14 toString()方法
+ *   无参数
+ *   将数组转化为字符串,以逗号’分隔
+ *   返回：数组转化的字符串
+ * */
+
+var arr27 = ['zhangSan','Lisi','Wangwu','ZhaoLiu'];
+var str1 = arr27.toString();
+console.log(str1);   // zhangSan,Lisi,Wangwu,ZhaoLiu
+ 
+ 15  unshift(item1,item2,itemN)方法
+ *   可传多个参数，itemS表示向数组头部添加的新的多个数组元素
+ *   向数组头部添加多个数组元素
+ *   返回：新的数组长度（改变原数组）
+ * */
+var arr28 = [6,7,8,9,10];
+var arr29 = arr28.unshift(1,2,3,4,5);
+console.log(arr29);  // 10
+console.log(arr28);  //  [1,2,3,4,5,6,7,8,9,10]
+
+  16 /*
+ *   valueOf()方法
+ *   无参数
+ *   返回原数组对象的原始值
+ * */
+var arr30 = [1,2,3,4,5];
+var arr31 = arr30.valueOf();
+console.log(arr31);       // [1,2,3,4,5]
+console.log(arr30 == arr31);  // true
+
+
+  this this所在的函数是当做哪个对象的方法调用的，则该对象就是this所引用的对象。 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

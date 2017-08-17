@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb810078-eded-4397-8656-db04aacc1920" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/canvaspic/mo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/canvaspic/suipian.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/app/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/app/2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/app/hello.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/app/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/modules/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/modules/sea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/src/hello.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/static/main/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/static/main/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/static/router/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sea/static/router/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvaspic/.idea/workspace.xml" afterPath="$PROJECT_DIR$/canvaspic/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvaspic/anm.js" afterPath="$PROJECT_DIR$/canvaspic/anm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvaspic/index.html" afterPath="$PROJECT_DIR$/canvaspic/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css总结.css" afterPath="$PROJECT_DIR$/css总结.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js总结.js" afterPath="$PROJECT_DIR$/js总结.js" />
     </list>
     <ignored path="xuexi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,11 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css总结.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="css总结.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css总结.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6449935">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+            <state vertical-scroll-proportion="-3.875">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="js总结.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js总结.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32262212">
+              <caret line="121" column="30" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -150,6 +144,7 @@
         <option value="$PROJECT_DIR$/sea/app/2.html" />
         <option value="$PROJECT_DIR$/canvaspic/mo.html" />
         <option value="$PROJECT_DIR$/css总结.css" />
+        <option value="$PROJECT_DIR$/js总结.js" />
       </list>
     </option>
   </component>
@@ -431,13 +426,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/es6总结">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4993789">
-          <caret line="113" column="21" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sum.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6070496">
@@ -456,13 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js总结.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4856397">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -781,8 +762,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css总结.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6449935">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        <state vertical-scroll-proportion="-3.875">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es6总结">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.2876377">
+          <caret line="113" column="21" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js总结.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32262212">
+          <caret line="121" column="30" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
           <folding />
         </state>
       </provider>
