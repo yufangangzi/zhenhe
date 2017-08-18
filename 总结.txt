@@ -145,7 +145,26 @@ console.log(arr30 == arr31);  // true
 
 
   this this所在的函数是当做哪个对象的方法调用的，则该对象就是this所引用的对象。 
+ 
+  var a= {}
+    Object.defineProperty(a,"b",{
+        set:function(newValue){
+            console.log("你要赋值给我,我的新值是"+newValue)
+        },
+        get:function(){
+            console.log("你取我的值")
+            return 2 //注意这里，我硬编码返回2
+        }
+    })
+    a.b =1 //打印 你要赋值给我,我的新值是1
+    console.log(a.b)    //打印 你取我的值
+                        //打印 2    注意这里，和我的硬编码相同的
 
+
+虚拟DOM（原理让我讲了一遍）、Diff算法（原理让我讲了一遍）、vuex和redux（原理让我讲了一遍）...
+
+
+腾讯地图APP之前的poi详情页的搜索是在客户端实现，为了多变的需求，通过下载zip包的形式，使用h5页展示。和服务器端交互使用的JSONP的形式，和客户端的交互使用自定义的函数和参数。实现地图内部美食，线路，酒店等的搜索。增加了内容展示的灵活性。
 
 
 
